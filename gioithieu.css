@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  background-image: url("Images/background.jpg"); /* Hình ảnh lớn làm background */
+  background-size: cover; /* Phủ kín toàn bộ trang */
+  background-position: center; /* Căn giữa hình ảnh */
+  background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+  background-attachment: fixed; /* Hình ảnh cố định khi cuộn */
+  min-height: 100vh; /* Đảm bảo chiều cao tối thiểu bằng viewport */
+}
+.header-content {
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: space-between; /* Phân bố đều 3 phần */
+  max-width: 1200px; /* Giới hạn chiều rộng giống .main */
+  margin: 0 auto; /* Căn giữa toàn bộ header */
+}
+
+.header-logo img {
+  width: 200px;
+  height: auto;
+}
+.header-text {
+  text-align: center;
+  flex-grow: 1;
+}
+.header-login {
+  text-align: right;
+  display: flex;
+  gap: 10px;
+}
+.register-btn {
+  background-color: #fff;
+  color: #f39c12;
+  padding: 12px 26px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.register-btn:hover {
+  background-color: #d35400;
+  color: white;
+}
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .header-logo img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .header-login {
+    margin-top: 10px;
+    justify-content: center; /* Căn giữa các nút trên mobile */
+  }
+}
+@media (max-width: 400px) {
+  .header-login {
+    flex-direction: column; /* Chuyển thành dọc trên màn hình rất nhỏ */
+    gap: 8px;
+  }
+
+  .header-logo img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .login-btn,
+  .register-btn {
+    padding: 6px 12px; /* Giảm padding */
+  }
+}
+.login-btn {
+  background-color: #fff; /* Nền trắng cho nút */
+  color: #f39c12; /* Màu chữ cam */
+  padding: 8px 16px; /* Khoảng cách bên trong */
+  text-decoration: none; /* Bỏ gạch chân */
+  border-radius: 4px; /* Bo góc */
+  font-weight: bold;
+}
+
+.login-btn:hover {
+  background-color: #e67e22; /* Đổi màu khi hover */
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column; /* Chuyển thành dọc trên màn hình nhỏ */
+    padding: 10px;
+  }
+
+  .header-logo img {
+    width: 200px; /* Giảm kích thước logo trên mobile */
+    margin-bottom: 10px;
+  }
+
+  .header-login {
+    margin-top: 10px;
+  }
+}
+.header {
+  background-color: rgba(228, 183, 58, 0.9); /* Màu cam với độ trong suốt */
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+
+.header h1 {
+  margin-bottom: 10px;
+  margin-right: 0px;
+}
+.nav {
+  background-color: rgba(230, 126, 34, 0.9); /* Màu cam đậm với độ trong suốt */
+  padding: 15px;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.nav ul li {
+  display: inline;
+  margin: 0 20px;
+  position: relative;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav ul li a:hover {
+  color: rgb(236, 240, 10);
+}
+/* Menu con */
+.nav ul li ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-radius: 3px;
+  width: 150px;
+  background-color: rgba(230, 126, 34, 0.9);
+  box-shadow: 0 0 1px gray;
+  z-index: 1000;
+}
+.nav ul li ul li {
+  margin: 0;
+  padding: 0;
+}
+.nav ul li ul li a {
+  display: block;
+  line-height: 40px;
+  color: white; /* cùng tông màu cam đậm */
+  background-color: rgba(230, 126, 34, 0.9); /* nền cam đậm */
+  text-decoration: none;
+  font-variant: small-caps;
+  font-size: larger;
+  padding: 0 20px;
+  margin: 0;
+  text-align: left;
+}
+.nav ul li ul li a:hover {
+  background-color: orangered;
+  color: rgb(236, 240, 10);
+}
+
+/* Khi hover vào li cha thì hiện menu con */
+.nav ul li:hover ul {
+  display: block;
+}
+/* Main Content */
+.main {
+  max-width: 1200px; /* Giới hạn chiều rộng nội dung */
+  margin: 10px auto; /* Căn giữa với khoảng trắng hai bên */
+  padding: 20px;
+  padding-bottom: 80px; /* Khoảng cách lề dưới */
+  background-color: rgba(255, 255, 255, 0.9); /* Nền trắng với độ trong suốt */
+  border-radius: 8px; /* Bo góc cho nội dung chính */
+}
+.h1 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.flex {
+  display: flex;
+  gap: 25px;
+  padding-bottom: 30px;
+}
+.col-5 {
+  width: 50%;
+}
+.img-nd {
+  height: 350px;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+.img-nd img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.nd p {
+  line-height: 1.5;
+  padding-left: 10px;
+}
+.nd-h2 {
+  padding-bottom: 20px;
+  text-align: center;
+  color: #f39c12;
+}
+
+.testimonials {
+  margin-top: 40px;
+  background-color: #2c3e50; /* Nền tối để nổi bật */
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.testimonial-column3 img {
+  margin: auto;
+  width: 100%;
+}
+.author3 {
+  padding-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #f39c12; /* Màu cam cho tên tác giả */
+}
+
+.school-logo {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.school-logo img {
+  width: 250px; /* Kích thước logo */
+  height: auto;
+}
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  flex: 0 0 auto; /* Đảm bảo logo không bị co giãn */
+}
+
+.footer-logo img {
+  width: 200px; /* Kích thước logo trong footer */
+  height: auto;
+}
+
+.footer-contact {
+  flex: 1; /* Chiếm phần còn lại của không gian */
+  text-align: right; /* Căn phải thông tin liên hệ */
+}
+
+.footer-contact p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.footer-copyright {
+  margin-top: 20px;
+  font-size: 14px;
+}
+@media (max-width: 1240px) {
+  .main {
+    max-width: 95%; /* Giảm chiều rộng tối đa khi màn hình nhỏ */
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome {
+    flex-direction: column;
+  }
+
+  .welcome-text,
+  .welcome-image {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .announcements,
+  .majors-content,
+  .testimonials-content {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-contact {
+    text-align: center; /* Căn giữa thông tin liên hệ trên màn hình nhỏ */
+  }
+}
+.footer-social {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-social a {
+  display: inline-block;
+}
+.footer-social a i {
+  color: #ffff;
+  font-size: 30px;
+  padding: 0 10px;
+  transition: transform 0.3s ease;
+  scale: 1.2;
+}
+.ytb:hover {
+  transform: scale(1.2);
+  color: red;
+}
+.fb:hover {
+  transform: scale(1.2);
+  color: rgb(44, 101, 201);
+}
+.tt:hover {
+  transform: scale(1.2);
+  color: rgb(0, 0, 0);
+}
